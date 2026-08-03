@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="/src/styles/common.css" rel="stylesheet" />
+        <script type="module" src="/src/scripts/common.ts"></script>
+        <title>Top Tracker</title>
+    </head>
+
+    <body class="flex min-h-[420px] min-w-[400px] flex-col border border-blue-50 bg-gray-900 text-blue-50">
+        <div class="flex items-center justify-between border-b border-blue-50 p-4">
+            <div class="flex items-center gap-4">
+                <img src="/images/toptal.png" alt="Toptal" class="h-6 w-6" />
+                <h3>MK TT Filler</h3>
+            </div>
+            <div class="flex gap-4">
+                <button id="icon-home" class="cursor-pointer">
+                    <i data-lucide="house" class="h-5 w-5 text-blue-50"></i>
+                </button>
+                <button id="icon-list" class="cursor-pointer">
+                    <i data-lucide="text-align-justify" class="h-5 w-5 text-blue-50"></i>
+                </button>
+                <button id="icon-settings" class="cursor-pointer">
+                    <i data-lucide="settings" class="h-5 w-5 text-blue-50"></i>
+                </button>
+            </div>
+        </div>
+        <div class="p-4">
+            <section id="home-content">
+                <h3 class="mb-4 text-center">Add Entry</h3>
+                <form id="form-add-entry">
+                    <div class="mb-4 flex flex-col gap-2">
+                        <label>Date</label>
+                        <input type="date" id="date" name="date" value="2026-08-01" class="rounded-md bg-blue-50 p-2 font-semibold text-gray-900 outline-none" />
+                    </div>
+                    <div class="mb-4 flex flex-col gap-2">
+                        <label>Time Slot</label>
+                        <div class="flex gap-6">
+                            <div class="flex items-center gap-2">
+                                <input type="radio" id="slot-1" name="time-slot" value="10:00-14:00" />
+                                <label for="slot-1">10:00-14:00</label>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <input type="radio" id="slot-2" name="time-slot" value="15:00-19:00" />
+                                <label for="slot-2">15:00-19:00</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-4 flex flex-col gap-2">
+                        <label for="description">Description</label>
+                        <textarea
+                            type="text"
+                            id="description"
+                            name="description"
+                            class="rounded-md bg-blue-50 p-2 font-semibold text-gray-900 outline-none"
+                        ></textarea>
+                    </div>
+                    <button
+                        type="submit"
+                        class="w-[150px] cursor-pointer rounded-md bg-blue-500 p-2 font-semibold text-blue-50 outline-none"
+                    >
+                        Save
+                    </button>
+                </form>
+                <div class="mt-6 border-t border-blue-50 pt-4">
+                    <button
+                        id="btn-fill-tracker"
+                        class="w-full cursor-pointer rounded-md bg-green-500 p-2 font-semibold text-white outline-none"
+                    >
+                        Open & Fill Top Tracker
+                    </button>
+                </div>
+            </section>
+            <section id="list-content" class="hidden overflow-auto">
+                <h3 class="mb-4 text-center">List of recorded activities</h3>
+                <div id="list-container"></div>
+            </section>
+            <section id="settings-content" class="hidden">
+                <h3 class="mb-4 text-center">Settings</h3>
+                <form id="form-settings">
+                    <div class="mb-4 flex flex-col gap-2">
+                        <label for="api_key">API Key</label>
+                        <input
+                            type="text"
+                            id="api_key"
+                            name="api_key"
+                            class="rounded-md bg-blue-50 p-2 font-semibold text-gray-900 outline-none"
+                        />
+                    </div>
+                    <div class="mb-4 flex flex-col gap-2">
+                        <label for="project_name">Project Name</label>
+                        <input
+                            type="text"
+                            id="project_name"
+                            name="project_name"
+                            class="rounded-md bg-blue-50 p-2 font-semibold text-gray-900 outline-none"
+                        />
+                    </div>
+                    <button
+                        type="submit"
+                        class="mt-4 w-[150px] cursor-pointer rounded-md bg-blue-500 p-2 font-semibold text-blue-50 outline-none"
+                    >
+                        Save
+                    </button>
+                </form>
+            </section>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+{
+    "name": "Top Tracker",
+    "description": "Track daily tasks and auto fill top tracker mk",
+    "version": "1.0",
+    "manifest_version": 3,
+    "action": {
+        "default_popup": "src/index.html",
+        "default_icon": "images/toptal.png"
+    },
+    "icons": {
+        "16": "images/toptal.png",
+        "32": "images/toptal.png",
+        "48": "images/toptal.png",
+        "128": "public/images/toptal.png"
+    },
+    "permissions": ["storage", "tabs", "alarms", "notifications"],
+    "background": {
+        "service_worker": "src/scripts/background.ts"
+    },
+    "content_scripts": [
+        {
+            "js": ["src/scripts/content.ts"],
+            "matches": ["https://*.toptal.com/*"]
+        }
+    ]
+}
